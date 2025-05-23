@@ -24,35 +24,26 @@ return {
 			enable_transparency()
 		end,
 	},
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", enabled = vim.fn.executable("make") == 1 },
-		},
-		cmd = "Telescope",
-		keys = {
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
-		},
-		opts = {
-			defaults = {
-				layout_config = {
-					horizontal = { preview_width = 0.6 },
-				},
-				file_ignore_patterns = { "node_modules", ".git" },
-			},
-		},
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		opts = {
-			theme = "tokyonight",
-		},
-	},
+	-- {
+	-- 	"nvim-telescope/telescope.nvim",
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", enabled = vim.fn.executable("make") == 1 },
+	-- 	},
+	-- 	cmd = "Telescope",
+	-- 	keys = {
+	-- 		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+	-- 		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+	-- 		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+	-- 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
+	-- 	},
+	-- 	opts = {
+	-- 		defaults = {
+	-- 			layout_config = {
+	-- 				horizontal = { preview_width = 0.6 },
+	-- 			},
+	-- 			file_ignore_patterns = { "node_modules", ".git" },
+	-- 		},
+	-- 	},
+	-- }
 }
