@@ -1,4 +1,4 @@
--- LSP + Formatters Setup for MERN Stack
+-- plugins/lsp.lua
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -10,7 +10,6 @@ return {
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
-					"eslint",
 					"ts_ls",
 					"html",
 					"cssls",
@@ -22,10 +21,13 @@ return {
 
 			local lspconfig = require("lspconfig")
 
-			-- Set up each server
 			local servers = {
-				tsserver = {},
-				eslint = {},
+				ts_ls = {
+					on_attach = function(client, bufnr)
+						-- ❗ Disable tsserver diagnostics (handled by eslint_d instead)
+						client.handlers["textDocument/publishDiagnostics"] = function() end
+					end,
+				},
 				html = {},
 				cssls = {},
 				jsonls = {},
@@ -49,13 +51,12 @@ return {
 				lspconfig[name].setup(opts)
 			end
 
-			-- Global LSP keymaps
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
 					local bufnr = args.buf
+					local map = vim.keymap.set
 					local opts = { buffer = bufnr }
 
-					local map = vim.keymap.set
 					map("n", "gd", vim.lsp.buf.definition, opts)
 					map("n", "K", vim.lsp.buf.hover, opts)
 					map("n", "gi", vim.lsp.buf.implementation, opts)
