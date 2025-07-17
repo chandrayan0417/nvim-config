@@ -43,6 +43,24 @@ return {
 						"typescriptreact",
 					},
 				},
+				biome = {
+					capabilities = capabilities,
+					cmd = { "biome", "lsp-proxy" },
+					filetypes = {
+						"css",
+						"graphql",
+						"html",
+						"javascript",
+						"javascriptreact",
+						"json",
+						"jsonc",
+						"typescript",
+						"typescript.tsx",
+						"typescriptreact",
+					},
+					root_dir = require("lspconfig.util").root_pattern("biome.json", ".git"),
+					single_file_support = false,
+				},
 			}
 
 			for name, opts in pairs(servers) do

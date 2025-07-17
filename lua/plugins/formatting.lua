@@ -13,15 +13,8 @@ return {
 			["typescriptreact"] = { "biome-check" },
 			["json"] = { "biome-check" },
 			["css"] = { "biome-check" },
-			-- javascript = { "biome" },
-			-- javascriptreact = { "biome" },
-			-- typescript = { "biome" },
-			-- typescriptreact = { "biome" },
-			-- json = { "biome" },
-			html = { "prettierd" },
-			-- css = { "prettierd" },
+			["html"] = { "biome-check" },
 			markdown = { "prettierd" },
-			yaml = { "prettierd" },
 		},
 		formatters = {
 			biome = {
