@@ -10,17 +10,16 @@ return {
 	},
 	{
 		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = ":call mkdp#util#install()",
 		keys = {
 			{
-				"<leader>mp",
+				"<leader>m",
 				ft = "markdown",
 				"<cmd>MarkdownPreviewToggle<cr>",
 				desc = "Markdown Preview",
 			},
 		},
-		init = function()
-			-- The default filename is 「${name}」and I just hate those symbols
-			vim.g.mkdp_page_title = "${name}"
-		end,
 	},
 }
