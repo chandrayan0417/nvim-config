@@ -9,6 +9,7 @@ return {
 					require("luasnip.loaders.from_vscode").lazy_load()
 				end,
 			},
+			"fang2hou/blink-copilot", -- Add the Copilot provider as a dependency
 		},
 		version = "1.*",
 		---@module 'blink.cmp'
@@ -18,7 +19,6 @@ return {
 
 			keymap = {
 				preset = "default",
-
 				["<Tab>"] = {
 					function(cmp)
 						if cmp.snippet_active() then
@@ -30,11 +30,8 @@ return {
 					"snippet_forward",
 					"fallback",
 				},
-
 				["<S-Tab>"] = { "snippet_backward", "fallback" },
-
 				["<CR>"] = { "fallback" }, -- disables acceptance on Enter
-
 				["<C-Space>"] = { "show" },
 			},
 
@@ -65,10 +62,19 @@ return {
 
 			sources = {
 				default = {
+					"copilot", -- Copilot is now a completion source!
 					"lsp",
 					"path",
 					"snippets",
 					"buffer",
+				},
+				providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						score_offset = 100,
+						async = true,
+					},
 				},
 			},
 
