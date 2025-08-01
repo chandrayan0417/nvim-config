@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd("SwapExists", {
 		vim.v.swapchoice = "e" -- 'e' for edit anyway
 	end,
 })
-vim.keymap.set("n", "<leader>r", function()
+vim.keymap.set("n", "<leader>R", function()
 	local old_name = vim.fn.expand("%")
 	local new_name = vim.fn.input("Rename to: ", old_name)
 	if new_name ~= "" and new_name ~= old_name then

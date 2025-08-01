@@ -4,12 +4,11 @@ return {
 		cmd = "Copilot",
 		build = ":Copilot auth",
 		opts = {
-			suggestion = { enabled = true }, -- disables ghost text
-			panel = { enabled = true }, -- disables Copilot panel
+			suggestion = { enabled = true },
+			panel = { enabled = true },
 			filetypes = {
 				["*"] = true,
 			},
 		},
 	},
 }
-

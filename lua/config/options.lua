@@ -68,6 +68,6 @@ vim.opt.smartcase = true
 
 -- diagnosic inline
 vim.diagnostic.config({ virtual_text = true })
-vim.opt.lazyredraw = false
+
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true

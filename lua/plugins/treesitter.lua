@@ -33,6 +33,7 @@ return {
 					"c",
 					"dockerfile",
 					"gitignore",
+					"http",
 				},
 				-- auto install above language parsers
 				auto_install = false,
