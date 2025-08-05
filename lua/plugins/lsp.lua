@@ -23,6 +23,7 @@ return {
 					"jsonls",
 					"tailwindcss",
 					"biome",
+					"lua_ls",
 					-- Removed html and emmet_ls as per your snippet
 				},
 			})
@@ -34,6 +35,7 @@ return {
 					"lua_ls",
 					"tailwindcss-language-server",
 					"ts_ls",
+					"lua_ls",
 				},
 				auto_update = false,
 				run_on_start = true,
@@ -45,10 +47,10 @@ return {
 			local servers = {
 				ts_ls = {
 					capabilities = capabilities,
-					on_attach = function(client, _)
-						-- Disable diagnostics for this LSP (as in your snippet)
-						client.handlers["textDocument/publishDiagnostics"] = function() end
-					end,
+					-- on_attach = function(client, _)
+					-- 	-- Disable diagnostics for this LSP (as in your snippet)
+					-- 	client.handlers["textDocument/publishDiagnostics"] = function() end
+					-- end,
 				},
 				cssls = { capabilities = capabilities },
 				jsonls = { capabilities = capabilities },
@@ -88,7 +90,6 @@ return {
 					single_file_support = false,
 				},
 				lua_ls = { capabilities = capabilities },
-				gopls = { capabilities = capabilities },
 			}
 
 			-- Setup each LSP server

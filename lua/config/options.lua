@@ -1,73 +1,45 @@
--- Set leader key to space
+-- Leader keys
 vim.g.mapleader = " "
--- Set leader key to space
 vim.g.maplocalleader = " "
 
--- Number of spaces a tab represents
+-- Tabs & indentation
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-
--- Use appropriate when using indent command
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-
--- Indenting correctly after { etc
 vim.opt.smartindent = true
-
--- Copy indent from current line when starting new line
 vim.opt.autoindent = true
 
--- Prevent line wrapping
-vim.opt.breakindent = true
-
--- Disable text wrap
+-- Line wrapping & display
 vim.opt.wrap = true
+-- vim.opt.breakindent = true
 
--- Speeds up plugin wait time
+-- Undo & performance
 vim.opt.updatetime = 50
-
--- Persistant undo file history
 vim.opt.undofile = true
 
--- Enable line numbers
+-- Line numbers
 vim.opt.nu = true
-
--- Enable relative line numbers
 vim.opt.rnu = true
 
--- Disable showing the mode below the statusline
+-- UI
 vim.opt.showmode = false
-
--- Better completion experience
 vim.opt.completeopt = { "menuone", "noselect" }
-
--- Enable 24-bit color
 vim.opt.termguicolors = true
-
--- Enable the sign column to prevent the screen from jumping
 vim.opt.signcolumn = "yes"
-
--- Enable cursor line highlight
 vim.opt.cursorline = true
-
--- Better splitting
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.lazyredraw = false
 
--- Faster scrolling
-vim.opt.lazyredraw = true
-
--- Enable highlighting search in progress
+-- Search
 vim.opt.incsearch = true
-
--- Ignore case for searches
 vim.opt.ignorecase = true
-
--- Enable case-sensitive search when uppercase letter present
 vim.opt.smartcase = true
 
--- diagnosic inline
+-- Diagnostics
 vim.diagnostic.config({ virtual_text = true })
 
+--spelling
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true

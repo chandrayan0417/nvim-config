@@ -45,7 +45,7 @@ return {
 			{
 				"<leader>tp",
 				function()
-					require("neotest").playwright.attachment()
+					require("neotest-playwright").attachment()
 				end,
 				desc = "Launch test attachment",
 			},
