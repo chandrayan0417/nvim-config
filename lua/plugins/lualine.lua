@@ -36,9 +36,7 @@ return {
 			lualine_x = { "location" }, -- cursor position
 			lualine_y = { "filetype" },
 			lualine_z = {
-				function()
-					return os.date("%I:%M %p") --"󰥔 .. "
-				end,
+				"progress",
 			},
 		}
 

@@ -24,7 +24,8 @@ return {
 					"tailwindcss",
 					"biome",
 					"lua_ls",
-					-- Removed html and emmet_ls as per your snippet
+					"emmet_ls",
+					"html",
 				},
 			})
 
@@ -32,10 +33,9 @@ return {
 			mason_tools.setup({
 				ensure_installed = {
 					"stylua",
-					"lua_ls",
 					"tailwindcss-language-server",
 					"ts_ls",
-					"lua_ls",
+					"lua-language-server",
 				},
 				auto_update = false,
 				run_on_start = true,

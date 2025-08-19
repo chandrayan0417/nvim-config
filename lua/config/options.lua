@@ -43,3 +43,8 @@ vim.diagnostic.config({ virtual_text = true })
 --spelling
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+
+vim.keymap.set("n", "<A-Tab>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<Tab>", "<cmd>b#<CR>", { desc = "Last buffer" })
+vim.keymap.set("n", "Q", "<C-w>c", { desc = "Close current split" })
+vim.keymap.set("n", "Q", "<cmd>bd<CR>", { desc = "Close buffer" })

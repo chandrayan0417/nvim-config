@@ -7,6 +7,7 @@ return {
 				dependencies = { "rafamadriz/friendly-snippets" },
 				config = function()
 					require("luasnip.loaders.from_vscode").lazy_load()
+					require("luasnip").filetype_extend("typescriptreact", { "html" })
 				end,
 			},
 			"fang2hou/blink-copilot", -- Add the Copilot provider as a dependency
