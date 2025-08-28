@@ -90,6 +90,7 @@ return {
 					single_file_support = false,
 				},
 				lua_ls = { capabilities = capabilities },
+				html = { capabilities = capabilities },
 			}
 
 			-- Setup each LSP server
