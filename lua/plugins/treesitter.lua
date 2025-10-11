@@ -3,7 +3,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
-			local configs = require("nvim-treesitter.configs")
+			local configs = require("nvim-treesitter.config")
 			configs.setup({
 				modules = {}, -- Add this
 				ignore_install = {}, -- Add this
