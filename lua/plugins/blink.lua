@@ -20,20 +20,25 @@ return {
 
 			keymap = {
 				preset = "default",
-				["<Tab>"] = {
-					function(cmp)
-						if cmp.snippet_active() then
-							return cmp.accept()
-						else
-							return cmp.select_and_accept()
-						end
-					end,
-					"snippet_forward",
-					"fallback",
-				},
-				["<S-Tab>"] = { "snippet_backward", "fallback" },
-				["<CR>"] = { "fallback" }, -- disables acceptance on Enter
+
+				-- TAB to navigate next item, expand snippets, or fallback
+				["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+
+				-- SHIFT+TAB to navigate previous item or fallback
+				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+
+				-- ENTER to accept selected item or create newline
+				["<CR>"] = { "accept", "hide", "fallback" },
+
+				-- CTRL+Space to show completion menu
 				["<C-Space>"] = { "show" },
+
+				-- Optional: CTRL+E to hide manually
+				["<C-e>"] = { "hide" },
+
+				-- -- Optional: Navigation with CTRL+N / CTRL+P
+				-- ["<C-n>"] = { "select_next", "fallback" },
+				-- ["<C-p>"] = { "select_prev", "fallback" },
 			},
 
 			appearance = {
